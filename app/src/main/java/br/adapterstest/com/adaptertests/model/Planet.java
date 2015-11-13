@@ -30,19 +30,3 @@ public class Planet {
         this.imgRes = imgRes;
     }
 }
-
-    //Usar no Fragment
-    private List<Planet> populatePlanets() {
-        ArrayList<Planet> planets = new ArrayList<Planet>();
-        planets.add(new Planet("Merkur", R.drawable.merkur));
-        planets.add(new Planet("Venera", R.drawable.venera));
-        planets.add(new Planet("Zemlja", R.drawable.zemlja));
-        planets.add(new Planet("Mars", R.drawable.mars));
-        planets.add(new Planet("Jupiter", R.drawable.jupiter));
-        planets.add(new Planet("Saturn", R.drawable.saturn));
-        planets.add(new Planet("Uran", R.drawable.uran));
-        planets.add(new Planet("Neptun", R.drawable.neptun));
-        planets.add(new Planet("Pluton", R.drawable.pluton));
-
-        return planets;
-    }

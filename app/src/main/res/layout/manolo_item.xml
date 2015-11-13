@@ -7,22 +7,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher"
-        android:id="@+id/imageView"/>
+        android:id="@+id/imageView"
+
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/textView"
         android:layout_toRightOf="@id/imageView"
+        android:layout_alignBottom="@id/imageView"
         android:layout_alignTop="@id/imageView"
-        android:layout_alignBottom="@id/imageView"/>
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar" />
-
+        android:gravity="center"/>
 
 </RelativeLayout>

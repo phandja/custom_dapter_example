@@ -14,6 +14,9 @@ import org.androidannotations.annotations.ViewById;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.adapterstest.com.adaptertests.fragment.PlanetAdapterFragment;
+import br.adapterstest.com.adaptertests.fragment.PlanetAdapterFragment_;
+
 @EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
 
@@ -22,22 +25,22 @@ public class MainActivity extends AppCompatActivity {
     @ViewById
     EditText my_text;
 
-    BaseAdapterFragment fragmentList;
+    PlanetAdapterFragment fragmentList;
 
     @AfterViews
     public void init(){
         items = new ArrayList();
         final FragmentManager manager = getSupportFragmentManager();
         final FragmentTransaction transaction = manager.beginTransaction();
-        fragmentList =  BaseAdapterFragment_.builder().listItems(items).build();
+        fragmentList =  PlanetAdapterFragment_.builder().build();
         transaction.add(R.id.container, fragmentList);
         transaction.commit();
     }
 
     @Click(R.id.bt_add)
     public void btAdd(){
-        String item = my_text.getText().toString();
-        fragmentList.addItem(item);
-        fragmentList.myList.setSelection(fragmentList.myList.getCount() - 1);
+//        String item = my_text.getText().toString();
+//        fragmentList.addItem(item);
+//        fragmentList.myList.setSelection(fragmentList.myList.getCount() - 1);
     }
 }

@@ -38,11 +38,6 @@ public class ArrayAdapterFragment extends Fragment {
         myList.setEmptyView(empty);
     }
 
-    public void setListItems(ArrayList list){
-        this.listItems = list;
-        init();
-    }
-
     public void addItem(String item){
         adapter.add(item);
     }

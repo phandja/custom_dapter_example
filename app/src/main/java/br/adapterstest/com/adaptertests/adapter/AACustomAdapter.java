@@ -1,4 +1,4 @@
-package br.adapterstest.com.adaptertests;
+package br.adapterstest.com.adaptertests.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -6,25 +6,34 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.androidannotations.annotations.EBean;
+import org.androidannotations.annotations.RootContext;
+
 import java.util.List;
 
 /**
  * Created by thiago on 13/11/2015.
  */
-public class CustomAdapter extends BaseAdapter {
+@EBean
+public class AACustomAdapter extends BaseAdapter {
 
-    private List<String> list;
-    private Context context;
-
-    public CustomAdapter(Context context, List<String> list){
-        this.list = list;
-        this.context = context;
-    }
+    @RootContext
+    Context context;
 
     public void add(String item){
         this.list.add(item);
         notifyDataSetChanged();
     }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
+    }
+
+    private List<String> list;
 
     @Override
     public int getCount() {

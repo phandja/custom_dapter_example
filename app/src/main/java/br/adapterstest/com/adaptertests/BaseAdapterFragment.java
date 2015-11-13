@@ -26,18 +26,13 @@ public class BaseAdapterFragment extends Fragment {
     @ViewById
     TextView empty;
 
-    ArrayAdapter adapter;
+    CustomAdapter adapter;
 
     @AfterViews
     public void init() {
-        adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, listItems);
+        adapter = new CustomAdapter(getActivity(), listItems);
         myList.setAdapter(adapter);
         myList.setEmptyView(empty);
-    }
-
-    public void setListItems(ArrayList list){
-        this.listItems = list;
-        init();
     }
 
     public void addItem(String item){

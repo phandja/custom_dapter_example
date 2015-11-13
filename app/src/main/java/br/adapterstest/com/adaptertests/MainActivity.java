@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
     @ViewById
     EditText my_text;
 
-    ArrayAdapterFragment_ fragmentList;
+    BaseAdapterFragment fragmentList;
 
     @AfterViews
     public void init(){
         items = new ArrayList();
         final FragmentManager manager = getSupportFragmentManager();
         final FragmentTransaction transaction = manager.beginTransaction();
-        fragmentList = (ArrayAdapterFragment_) ArrayAdapterFragment_.builder().listItems(items).build();
+        fragmentList =  BaseAdapterFragment_.builder().listItems(items).build();
         transaction.add(R.id.container, fragmentList);
         transaction.commit();
     }
@@ -37,10 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Click(R.id.bt_add)
     public void btAdd(){
         String item = my_text.getText().toString();
-//        items.add(item);
-//        fragmentList.setListItems(items);
         fragmentList.addItem(item);
-//        fragmentList.myList.scrollBy(0, fragmentList.);
         fragmentList.myList.setSelection(fragmentList.myList.getCount() - 1);
     }
 }
